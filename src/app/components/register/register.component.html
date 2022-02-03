@@ -1,0 +1,28 @@
+    <div *ngIf = '!this.isLogin'>
+        <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+            <div class="login">
+                <div class="container">
+                    <h1>Register Here</h1>
+                    <div class="details">
+                        <input type="text" placeholder="username" name="username" ngModel required>
+                        <input type="email" placeholder="Email" name="email" ngModel required email>
+                        <input type="password" placeholder="Password" name="password" ngModel required><br>
+                        <input type="file" name="image" accept='image/*' >
+                    </div>
+                    <!-- <input type="checkbox" name="remember" ngModel><span>Remember me</span> -->
+                    <a href="#">Forgot password?</a>
+                    <button>Register</button>
+                    <ul>
+                        <li><i class="fab fa-facebook-f fa-2x"></i></li>
+                        <li><i class="fab fa-twitter fa-2x"></i></li>
+                        <li><i class="fab fa-github fa-2x"></i></li>
+                        <li><i class="fab fa-linkedin-in fa-2x"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class = 'col-md-4 offset-4 mt-5' *ngIf = 'this.isLogin'>
+        <h5>You are logged in</h5>
+    </div>

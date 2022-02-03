@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+  isLogin: boolean = false;
+
+  constructor(
+    private _auth: AuthService,
+    private _router: Router
+    ) { }
+
+  ngOnInit() {
+    this.isUserLogin();
+  }
+
+
+  isUserLogin(){
+    if(this._auth.getUserDetails() != null){
+        this.isLogin = true;
+    }
+  }
+  logout(){
+    this._auth.clearStorage()
+    this._router.navigate(['']);
+  }
 }

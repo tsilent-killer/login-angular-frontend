@@ -1,0 +1,19 @@
+<div class="card-container">
+    <h3>User Profile</h3>
+    <div class="image-container">
+        <div class="image">image</div>
+    </div>
+    <div class="details">
+        <p>UserId: <span>{{userData[0].id}}</span></p>
+        <p>Username: <span>{{userData[0].username}}</span></p>
+        <p>Email: <span>{{userData[0].email}}</span></p>
+    </div>
+    <div class="actions">
+        <button class="edit">
+            <a routerLink="edit">Edit profile</a>
+        </button>
+        <button class="delete" (click)="onDelete()">
+            <a href="">Delete account</a>
+        </button>
+    </div>
+</div>

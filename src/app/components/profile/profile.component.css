@@ -1,0 +1,71 @@
+body{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+
+.card-container{
+    width: 400px;
+    margin: 10px auto;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 60px 40px;
+    background-color: #e9ebee;
+    text-align: center;
+    box-shadow: 2px gray;
+}
+.card-container h3{
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+
+.image{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: skyblue;
+}
+
+.details{
+    /* display: flex; */
+    text-align: start;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+}
+.details span{
+    font-weight: bold;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px;
+}
+
+.actions button{
+    /* width: 100px; */
+    padding: 2px 5px;
+    margin: 0 20px;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.actions .edit{
+    background-color: lightgreen;
+}
+
+.actions .delete{
+    background-color: rgb(240, 111, 99);
+}

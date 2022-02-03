@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-container ul{
+    list-style: none;
+    display: flex;
+    padding: 5px 20px;
+}
+.nav-container li{
+    margin: 0 15px;
+}
+.nav-container a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
