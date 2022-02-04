@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
         console.log(res)
         this._auth.setDataInLocalStorage('userData', JSON.stringify(res.data));  
         this._auth.setDataInLocalStorage('token', res.token);  
-        this._router.navigate(['']);
+        this._router.navigate(['/profile']);
       } else { 
-        
+        console.log('no user found...')
       }
     }, err => {
       this.errorMessage = err['error'].message;

@@ -10,7 +10,10 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'frontend';
 
+  userData: any;
   isLogin: boolean = false;
+
+  public loginStatus:any;
 
   constructor(
     private _auth: AuthService,
@@ -18,17 +21,15 @@ export class AppComponent {
     ) { }
 
   ngOnInit() {
-    this.isUserLogin();
-  }
-
-
-  isUserLogin(){
-    if(this._auth.getUserDetails() != null){
-        this.isLogin = true;
+    this.userData = JSON.parse(localStorage.getItem('userData') || '{}');
+    if(this.userData.length){
+      this.isLogin = true;
     }
   }
+
   logout(){
+    this.isLogin = false;
     this._auth.clearStorage()
-    this._router.navigate(['']);
+    this._router.navigate(['/login']);
   }
 }
