@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this._api.postTypeRequest('login', form.value).subscribe((res: any) => {
       if (res.status) { 
         console.log(res)
-        this._auth.setDataInLocalStorage('userData', JSON.stringify(res.data));  
+        this._auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
         this._auth.setDataInLocalStorage('token', res.token);  
         this._router.navigate(['/profile']);
       } else { 

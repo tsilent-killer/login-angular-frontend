@@ -20,11 +20,11 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('ngOnInit called...')
-    console.log('showing localstorage...',localStorage['userData'])
+    console.log('showing localstorage...',localStorage)
     const userData = JSON.parse(localStorage.getItem('userData') || '{}');
     this.user = userData[0];
     
-    this._api.getTypeRequest('users').subscribe((res: any) => {
+    this._api.getTypeRequest(`profile/${this.user.id}`).subscribe((res: any) => {
       console.log(this.user)
     })
 
