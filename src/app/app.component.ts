@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'frontend';
 
   userData: any;
+  userId: any;
   isLogin: boolean = false;
 
   public loginStatus:any;
@@ -25,6 +26,8 @@ export class AppComponent {
     if(this.userData.length){
       this.isLogin = true;
     }
+    this.userId = this.userData[0].id
+    console.log('user Id: ', this.userData[0].id)
   }
 
   logout(){

@@ -8,7 +8,7 @@
       <a routerLink="login">login</a>
     </li>
     <li *ngIf="true">
-      <a routerLink="profile">profile</a>
+      <a [routerLink]="['profile/', userId]">profile</a>
     </li>
     <li *ngIf="true">
       <a (click) = 'logout()'>logout</a>

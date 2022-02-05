@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ApiService } from './services/api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
+    ProfileUpdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   isLogin: boolean = false
   errorMessage: string = ""
+  userid: any
+
   constructor(
     private _api: ApiService, 
     private _auth: AuthService, 
@@ -31,8 +33,9 @@ export class LoginComponent implements OnInit {
       if (res.status) { 
         console.log(res)
         this._auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
-        this._auth.setDataInLocalStorage('token', res.token);  
-        this._router.navigate(['/profile']);
+        this._auth.setDataInLocalStorage('token', res.token);
+        this.userid = res.data[0].id;
+        this._router.navigate([`/profile/${this.userid}`]);
       } else { 
         console.log('no user found...')
       }
